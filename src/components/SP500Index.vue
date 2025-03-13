@@ -35,7 +35,7 @@ export default {
   methods: {
     async fetchSpData() {
       try {
-        const response = await fetch('http://localhost:8081/api/stock/spy');
+        const response = await fetch('http://www.stockburning.shop/api/stock/spy');
         const data = await response.json();
         this.SP500Price = data.c;
         this.previousPrice = data.pc;

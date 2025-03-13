@@ -68,7 +68,7 @@ const store = createStore({
         //console.log("fetchStockInfo() 실행" + " " + ticker + " " + type);
         
         const { data: fetchedData } = await axios.get( //db에서 해당 티커 찾기
-          `http://localhost:8081/api/stock?ticker=${ticker}&type=${type}`,
+          `http://www.stockburning.shop/api/stock?ticker=${ticker}&type=${type}`,
         );
         
         if(!fetchedData){
@@ -88,7 +88,7 @@ const store = createStore({
     async fetchDefaultInfo({ commit },  {type="allPost"} ) { 
       try {
         const { data: fetchedData } = await axios.get( 
-          `http://localhost:8081/api/stock?ticker=nasdaq&type=${type}`,
+          `http://www.stockburning.shop/api/stock?ticker=nasdaq&type=${type}`,
         );
         if(!fetchedData){
           throw new Error("서버로부터 데이터를 받지 못했습니다.");
@@ -103,7 +103,7 @@ const store = createStore({
     async refresh({ commit }){
       try{
         const response = await apiClient.post(
-          `http://localhost:8081/api/auth/refresh`,
+          `http://www.stockburning.shop/api/auth/refresh`,
         );
         if (response.status === 200) {
           const getHeader = response.headers.get("Authorization");  
@@ -126,7 +126,7 @@ const store = createStore({
     },
     async login({ commit }, {id, password}) {
       try {
-        const response = await axios.post("http://localhost:8081/api/login", {
+        const response = await axios.post("http://www.stockburning.shop/api/login", {
           userId: id,
           userPw: password,
         },{
@@ -149,7 +149,7 @@ const store = createStore({
   
     async logout({ commit }) {
       try{
-        await axios.post("http://localhost:8081/api/logout", 
+        await axios.post("http://www.stockburning.shop/api/logout", 
         null
         ,{ withCredentials: true });
       }catch(error){

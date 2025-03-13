@@ -29,7 +29,7 @@ export default {
   methods: {
     async fetchNasdaqData() {
       try {
-        const response = await fetch('http://localhost:8081/api/stock/qqq');
+        const response = await fetch('http://www.stockburning.shop/api/stock/qqq');
         const data = await response.json();
         this.nasdaqPrice = data.c;
         this.previousPrice = data.pc;
