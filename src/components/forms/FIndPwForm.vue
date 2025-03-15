@@ -98,7 +98,7 @@ export default {
             this.validEmailMessage = "전송 중...";
             this.errorEmailMessage = "";
             try {
-                const response = await axios.get("http://localhost:8081/api/find/userPw/check-userInfo", {
+                const response = await axios.get("http://www.stockburning.shop/api/find/userPw/check-userInfo", {
                     params: { 
                         userid: this.userid,
                         email: this.email 
@@ -129,7 +129,7 @@ export default {
                 code: this.verificationCode
             }
             try {
-                const response = await axios.post("http://localhost:8081/api/find/userId/verify-code", 
+                const response = await axios.post("http://www.stockburning.shop/api/find/userId/verify-code", 
                     EmailCodeRequest
                 );
                 if (response.data.success) {
@@ -160,7 +160,7 @@ export default {
             this.validEmailCodeMessage = "전송 중...";
             this.errorEmailCodeMessage = "";
             try {
-                const response = await axios.get("http://localhost:8081/api/find/userId/check-email", {
+                const response = await axios.get("http://www.stockburning.shop/api/find/userId/check-email", {
                     params: { email: this.email },
                 });
 
@@ -236,7 +236,7 @@ export default {
                 }
                 this.showModal(4, "", "", "","진행 중");
                 const response = await axios.post(
-                    `http://localhost:8081/api/find/userPw`, 
+                    `http://www.stockburning.shop/api/find/userPw`, 
                     FindPwRequest
                 );
                 

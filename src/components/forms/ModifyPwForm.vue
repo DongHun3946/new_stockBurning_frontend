@@ -91,7 +91,7 @@ export default {
   methods: {
     async checkCurrentPassword(){
       try {
-        const response = await axios.post("http://localhost:8081/api/modify/check-password", {
+        const response = await axios.post("http://www.stockburning.shop/api/modify/check-password", {
           userid : this.$store.getters.userId,
           password : this.currentPassword,
         });
@@ -181,7 +181,7 @@ export default {
         return;
       }
       try {
-        const response = await axios.put(`http://localhost:8081/api/modify/password`, {
+        const response = await axios.put(`http://www.stockburning.shop/api/modify/password`, {
           userid : this.$store.getters.userId,
           password: this.newPassword,
         });
