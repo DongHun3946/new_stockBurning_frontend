@@ -59,7 +59,7 @@ export default {
     },
     */
     redirectToKakaoLogin() {
-      window.location.href = "http://www.stockburning.shop/oauth/authorization/kakao"; // 백엔드로 리다이렉트
+      window.location.href = "http://www.stockburning.shop/oauth2/authorization/kakao"; // 백엔드로 리다이렉트
     },
     findid() {
       this.$router.push("/findid");
