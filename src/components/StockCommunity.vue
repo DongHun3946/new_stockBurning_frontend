@@ -222,7 +222,7 @@ export default {
     },
   },
   mounted(){
-    console.log("hello");
+    
   },
   methods: {
 
