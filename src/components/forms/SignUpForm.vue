@@ -202,7 +202,7 @@ export default {
     },
     async checkNickNameDuplicated() {
       try {
-        const response = await axios.get("http://www.stockburning.shop/api/signup/check-nickname", {
+        const response = await axios.get("https://www.stockburning.shop/api/signup/check-nickname", {
           params: { nickname: this.nickname }
         });
         console.log(response.data);
@@ -224,7 +224,7 @@ export default {
     },
     async checkUserIdDuplicated() {
       try {
-        const response = await axios.get("http://www.stockburning.shop/api/signup/check-userid", {
+        const response = await axios.get("https://www.stockburning.shop/api/signup/check-userid", {
           params: { userid: this.userid }
         });
         if (response.data.available) {
@@ -252,7 +252,7 @@ export default {
       try {
         this.validEmailMessage = "전송 중...";
         this.errorEmailMessage = "";
-        const response = await axios.post("http://www.stockburning.shop/api/signup/send-email", null, {
+        const response = await axios.post("https://www.stockburning.shop/api/signup/send-email", null, {
           params: { email: this.email },
         });
 
@@ -285,7 +285,7 @@ export default {
       this.validEmailCodeMessage = "전송 중...";
       this.errorEmailCodeMessage = "";
       try {
-        const response = await axios.post("http://www.stockburning.shop/api/signup/send-email", null, {
+        const response = await axios.post("https://www.stockburning.shop/api/signup/send-email", null, {
           params: { email: this.email },
         });
         
@@ -305,7 +305,7 @@ export default {
     },
     async verifyCode() {
       try {
-        const response = await axios.post("http://www.stockburning.shop/api/signup/verify-code", null, {
+        const response = await axios.post("https://www.stockburning.shop/api/signup/verify-code", null, {
           params: { email: this.email, code: this.verificationCode },
         });
         if (response.data.success) {
@@ -365,7 +365,7 @@ export default {
         return;
       }
       try {
-        const response = await axios.post("http://www.stockburning.shop/api/signup", {
+        const response = await axios.post("https://www.stockburning.shop/api/signup", {
           nickName: this.nickname,
           userId: this.userid,
           userPw: this.password,

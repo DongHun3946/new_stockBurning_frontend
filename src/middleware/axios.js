@@ -3,7 +3,7 @@ import store from '../store/index'
 
 // Axios 인스턴스 생성
 const apiClient = axios.create({
-  baseURL: 'http://www.stockburning.shop',
+  baseURL: 'https://www.stockburning.shop',
   withCredentials: true ,
 });
 

@@ -83,7 +83,7 @@ export default {
             this.validEmailMessage = "전송 중...";
             this.errorEmailMessage = "";
             try {
-                const response = await axios.get("http://www.stockburning.shop/api/find/userId/check-email", {
+                const response = await axios.get("https://www.stockburning.shop/api/find/userId/check-email", {
                     params: { email: this.email }
                 });
                 if (response.data.success) {
@@ -108,7 +108,7 @@ export default {
                 code: this.verificationCode
             }
             try {
-                const response = await axios.post("http://www.stockburning.shop/api/find/userId/verify-code", 
+                const response = await axios.post("https://www.stockburning.shop/api/find/userId/verify-code", 
                     EmailCodeRequest
                 );
                 if (response.data.success) {
@@ -139,7 +139,7 @@ export default {
             this.validEmailCodeMessage = "전송 중...";
             this.errorEmailCodeMessage = "";
             try {
-                const response = await axios.get("http://www.stockburning.shop/api/find/userId/check-email", {
+                const response = await axios.get("https://www.stockburning.shop/api/find/userId/check-email", {
                     params: { email: this.email },
                 });
 
@@ -199,7 +199,7 @@ export default {
                 return;
             }
             try {
-                const response = await axios.get(`http://www.stockburning.shop/api/find/userId`, {
+                const response = await axios.get(`https://www.stockburning.shop/api/find/userId`, {
                     params: { email: this.email }
                 });
 

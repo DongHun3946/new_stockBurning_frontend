@@ -76,7 +76,7 @@ export default {
         return;
       }
       axios
-        .get(`http://www.stockburning.shop/api/stock/suggestions?prefix=${this.ticker}`)
+        .get(`https://www.stockburning.shop/api/stock/suggestions?prefix=${this.ticker}`)
         .then((response) => {
           this.suggestions = response.data;
         })
@@ -100,7 +100,7 @@ export default {
       //this.$store.dispatch("fetchStockInfo", this.ticker); // Vuex 액션 호출
       this.$router.push({ path: '/stock', query: { ticker: this.ticker, type: "allPost" } });
       await axios.post(
-        `http://www.stockburning.shop/api/stock/search?ticker=${this.ticker}`,
+        `https://www.stockburning.shop/api/stock/search?ticker=${this.ticker}`,
       );
       this.suggestions = [];
     },

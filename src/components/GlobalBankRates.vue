@@ -41,7 +41,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://www.stockburning.shop/api/scrape/bank-rates")
+      .get("https://www.stockburning.shop/api/scrape/bank-rates")
       .then((response) => {
         this.bankRates = response.data;
       })

@@ -28,7 +28,7 @@ export default {
 
     const fetchScore = async() => {
       try{
-        const response = await axios.get("http://www.stockburning.shop/api/fear-greed-index");
+        const response = await axios.get("https://www.stockburning.shop/api/fear-greed-index");
         score.value = response.data;
         updateChart();
       }catch(error){

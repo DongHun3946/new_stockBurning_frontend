@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     async getTop5Ticker(){
-      const response = await axios.get("http://www.stockburning.shop/api/search/top5");
+      const response = await axios.get("https://www.stockburning.shop/api/search/top5");
       this.top5Tickers = response.data;
     }
   },

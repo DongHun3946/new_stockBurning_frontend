@@ -263,7 +263,7 @@ export default {
       this.selectedPostId = post.id;
       try {
         const response = await apiClient.post(
-          `http://www.stockburning.shop/api/posts/like/${this.selectedPostId}`
+          `https://www.stockburning.shop/api/posts/like/${this.selectedPostId}`
         );
         if (response.status === 200) {
           window.location.reload();
@@ -281,7 +281,7 @@ export default {
       this.copyPostId = postId;
       try {
         const response = await axios.get(
-          `http://www.stockburning.shop/api/comments/${this.selectedPostId}`
+          `https://www.stockburning.shop/api/comments/${this.selectedPostId}`
         )
         if (response.status === 200) {
           this.postAndComments = response.data;
@@ -300,7 +300,7 @@ export default {
       if (!this.selectedPostId) return;
       try {
         const response = await apiClient.delete(
-          `http://www.stockburning.shop/api/posts/delete/${this.selectedPostId}`
+          `https://www.stockburning.shop/api/posts/delete/${this.selectedPostId}`
         );
         if (response.status === 200) {
           this.isModalVisible = false;
@@ -373,7 +373,7 @@ export default {
 
       try {
         const response = await apiClient.put(
-          `http://www.stockburning.shop/api/posts/update/${this.selectedPostId}`,
+          `https://www.stockburning.shop/api/posts/update/${this.selectedPostId}`,
           formData,
           {
             headers: {
@@ -519,7 +519,7 @@ export default {
       }
       try {
         const response = await apiClient.post(
-          "http://www.stockburning.shop/api/posts/create",
+          "https://www.stockburning.shop/api/posts/create",
           formData,
           {
             headers: {
@@ -547,7 +547,7 @@ export default {
       }
       try {
         const response = await apiClient.post(
-          `http://www.stockburning.shop/api/comments/create/${this.copyPostId}`,
+          `https://www.stockburning.shop/api/comments/create/${this.copyPostId}`,
           commentCreateRequest
         );
         if (response.status === 200) {
