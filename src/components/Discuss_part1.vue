@@ -6,7 +6,8 @@
             <p class="title-3">실시간 커뮤니티 상승 의견이 많은 종목</p>
         </div>
         <div class="content">
-            <li v-for="(dto, index) in BullishTop5Tickers" :key="dto.ticker" class="ticker-item">
+            <ul class="ticker-list">
+                <li v-for="(dto, index) in BullishTop5Tickers" :key="dto.ticker" class="ticker-item">
                 <span class="ticker-rank">{{ index + 1 }}.</span>
                 <div class="ticker-content">
                     <div class="ticker-name">
@@ -38,7 +39,8 @@
                     </div>
                 </div>
             </li>
-            <p v-if="!BullishTop5Tickers" class="loading-text">커뮤니티 데이터 수집 중..</p>
+            </ul>
+            
         </div>
     </div>
 </template>
@@ -54,7 +56,7 @@ export default {
     },
     methods: {
         async getTop5Ticker() {
-            const response = await axios.get("https://www.stockburning.shop/api/bullish/top3");
+            const response = await axios.get("http://localhost:8081/api/bullish/top3");
             this.BullishTop5Tickers = response.data;
         }
     },
@@ -81,19 +83,6 @@ export default {
     box-sizing: border-box;
 }
 
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.3; }
-  100% { opacity: 1; }
-}
-.loading-text {
-  font-size: 25px;
-  font-weight: bold;
-  color: #6f61f0;
-  text-align: center;
-  margin-top: 70px;
-  animation: blink 1.5s infinite; /* 1.5초마다 반복 */
-}
 .title {
     flex: 1;
     color: #b4c5ee;
@@ -125,12 +114,22 @@ export default {
     /* background-color: #d43131; */
 }
 .content {
-    flex: 8;
+    flex: 9;
     display: flex;
     flex-direction: column;
+    height: 100%;
     /* background-color: rgb(176, 69, 185); */
 }
-
+.ticker-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 .ticker-item {
     flex: 1;
     background-color: #3a3a3a;
@@ -206,6 +205,7 @@ export default {
 .section1-top {
     flex: 1;
     /* background-color: #bad362; */
+    margin-bottom: 3px;
 }
 
 .section1-bottom {
@@ -235,6 +235,7 @@ export default {
 
 .section3-top {
     flex: 1;
+    margin-bottom: 3px;
     /* background-color: #bad362; */
 }
 
