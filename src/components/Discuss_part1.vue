@@ -56,7 +56,7 @@ export default {
     },
     methods: {
         async getTop5Ticker() {
-            const response = await axios.get("http://localhost:8081/api/bullish/top3");
+            const response = await axios.get("https://www.stockburning.shop/api/bullish/top3");
             this.BullishTop5Tickers = response.data;
         }
     },
