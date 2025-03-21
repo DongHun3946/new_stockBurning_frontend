@@ -102,6 +102,7 @@ export default {
       await axios.post(
         `https://www.stockburning.shop/api/stock/search?ticker=${this.ticker}`,
       );
+      console.log("검색어 입력");
       this.suggestions = [];
     },
     clearTicker() {
