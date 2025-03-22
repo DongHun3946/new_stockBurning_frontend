@@ -111,7 +111,7 @@ export default {
             }
         },
         deleteAccount(){
-            this.showModal(5, "주의", "삭제하시겠습니까?", "삭제를 원하지 않는 경우 취소 버튼을 눌러주세요.");
+            this.showModal(5, "계정 탈퇴", "탈퇴하시겠습니까?", "탈퇴를 원하지 않는 경우 취소 버튼을 눌러주세요.");
         },
         async confirmDeleteAccount() {
             try {
@@ -120,7 +120,7 @@ export default {
                 
                 if (response.status === 200) {
                     window.location.href = "/";
-                    this.showModal(2, "게정 탈퇴 완료!", "계정을 성공적으로 탈퇴하였습니다!");
+                    this.showModal(2, "계정 탈퇴 완료!", "계정을 성공적으로 탈퇴하였습니다!");
                 }
             }
             catch (error) {
