@@ -29,7 +29,7 @@
           </div>
           <div class="selectedPost-mid">
             <div class="selectedPost-content">{{ postAndComments.postDTO.content }}</div>
-            <div class="selectedPost-image"><img :src="postAndComments.postDTO.post_imagePath" alt="게시글 이미지"></div>
+            <div class="selectedPost-image" v-if="postAndComments.postDTO.post_imagePath"><img :src="postAndComments.postDTO.post_imagePath" alt="게시글 이미지"></div>
           </div>
           <div class="selectedPost-bottom">
             <div class="like-button"><img src="/imgs/thumbs-up_16.png" alt="like_img"
